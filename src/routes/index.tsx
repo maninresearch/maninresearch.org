@@ -19,11 +19,11 @@ function Section({
   return (
     <section
       id={id}
-      className={`w-full py-24 md:py-32 ${alt ? "bg-secondary" : "bg-background"}`}
+      className={`w-full py-16 md:py-24 lg:py-32 ${alt ? "bg-secondary" : "bg-background"}`}
     >
       <div className="mx-auto max-w-[1100px] px-6">
         {title && (
-          <h2 className="text-3xl md:text-4xl mb-10 tracking-tight">{title}</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl mb-8 md:mb-10 tracking-tight">{title}</h2>
         )}
         {children}
       </div>
@@ -103,18 +103,18 @@ function Index() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center">
+      <section className="min-h-screen flex items-center pt-16">
         <div className="mx-auto max-w-[1100px] px-6 w-full">
-          <h1 className="font-serif text-5xl md:text-6xl tracking-tight mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight mb-6">
             Manin Research
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-4 whitespace-nowrap">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-4 max-w-xl">
             Advancing quantum computing through open research and open-source tools.
           </p>
-          <p className="text-sm text-muted-foreground max-w-[560px] text-left">
+          <p className="text-sm text-muted-foreground max-w-[560px]">
             Named after Yuri Manin (1937–2023), mathematician and pioneer of quantum computing.
           </p>
-          <div className="mt-16 h-px w-24 bg-border" />
+          <div className="mt-12 md:mt-16 h-px w-24 bg-border" />
         </div>
       </section>
 
@@ -168,10 +168,10 @@ function Index() {
         <ul className="divide-y divide-border">
           {projects.map((p) => (
             <li key={p.name} className="py-6 first:pt-0 last:pb-0">
-              <div className="flex items-baseline justify-between gap-4 mb-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
                 <h3 className="font-sans font-semibold text-base">{p.name}</h3>
                 <span
-                  className={`text-xs uppercase tracking-wider whitespace-nowrap ${
+                  className={`text-xs uppercase tracking-wider ${
                     p.status === "Active" ? "text-accent" : "text-muted-foreground"
                   }`}
                 >
@@ -197,7 +197,8 @@ function Index() {
         <div className="space-y-10">
           <div>
             <h3 className="font-sans font-semibold text-base">
-              Hasarindu Perera <span className="font-normal text-muted-foreground">— Founder & Researcher</span>
+              Hasarindu Perera{" "}
+              <span className="font-normal text-muted-foreground block sm:inline">Founder & Researcher</span>
             </h3>
             <p className="text-muted-foreground mt-1">
               Quantum machine learning, VQC architectures, reinforcement learning,
@@ -210,7 +211,8 @@ function Index() {
           </div>
           <div>
             <h3 className="font-sans font-semibold text-base">
-              Ashani Kodithuwakku <span className="font-normal text-muted-foreground">— Researcher</span>
+              Ashani Kodithuwakku{" "}
+              <span className="font-normal text-muted-foreground block sm:inline">Researcher</span>
             </h3>
             <p className="text-muted-foreground mt-1">
               Artificial intelligence. Undergraduate, University of Moratuwa.
